@@ -1,0 +1,73 @@
+name: Update Appcast
+
+on:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: 'Channel to update (all, debug, release, prod)'
+        required: true
+        default: 'release'
+        type: choice
+        options:
+          - all
+          - debug
+          - release
+          - prod
+
+jobs:
+  update-appcast:
+    name: Generate and Update Appcast
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate appcast
+        run: |
+          if [ "${{ github.event.inputs.channel }}" = "all" ]; then
+            python3 scripts/generate_appcast.py \
+              --releases-dir releases \
+              --output-dir appcast \
+              --base-url https://danielraffel.github.io/proxymanager-releases
+          else
+            python3 scripts/generate_appcast.py \
+              --releases-dir releases \
+              --output-dir appcast \
+              --base-url https://danielraffel.github.io/proxymanager-releases \
+              --channel ${{ github.event.inputs.channel }}
+          fi
+
+      - name: Validate generated appcast
+        run: |
+          for xmlfile in appcast/*.xml; do
+            if [ -f "$xmlfile" ]; then
+              python3 scripts/validate_appcast.py "$xmlfile"
+            fi
+          done
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add appcast/
+          git diff --quiet && git diff --staged --quiet || {
+            git commit -m "chore: update appcast for ${{ github.event.inputs.channel }} channel [skip ci]"
+            git push
+          }
+
+      - name: Summary
+        run: |
+          echo "## Appcast Updated 🎉" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Channel: \`${{ github.event.inputs.channel }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Updated Files" >> $GITHUB_STEP_SUMMARY
+          ls -lh appcast/*.xml >> $GITHUB_STEP_SUMMARY

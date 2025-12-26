@@ -1,0 +1,58 @@
+name: Validate Appcast
+
+on:
+  pull_request:
+    paths:
+      - 'appcast/*.xml'
+      - 'scripts/**'
+  push:
+    branches: [main]
+    paths:
+      - 'appcast/*.xml'
+
+jobs:
+  validate:
+    name: Validate Appcast XML
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate XML syntax
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxml2-utils
+
+          for xmlfile in appcast/*.xml; do
+            if [ -f "$xmlfile" ]; then
+              echo "Validating $xmlfile..."
+              xmllint --noout "$xmlfile"
+            fi
+          done
+
+      - name: Validate with Python script
+        run: |
+          for xmlfile in appcast/*.xml; do
+            if [ -f "$xmlfile" ]; then
+              echo "Checking $xmlfile..."
+              python3 scripts/validate_appcast.py "$xmlfile"
+            fi
+          done
+
+      - name: Check for required elements
+        run: |
+          for xmlfile in appcast/*.xml; do
+            if [ -f "$xmlfile" ]; then
+              if ! grep -q "sparkle:edSignature" "$xmlfile"; then
+                echo "❌ Missing edSignature in $xmlfile"
+                exit 1
+              fi
+              echo "✅ $xmlfile has required elements"
+            fi
+          done
