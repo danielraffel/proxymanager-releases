@@ -7,6 +7,21 @@
         <language>en</language>
 
         <item>
+            <title>Version 2.0.1 - Settings Improvements</title>
+            <sparkle:releaseNotesLink>https://github.com/danielraffel/proxymanager-releases/releases/tag/v2.0.1</sparkle:releaseNotesLink>
+            <pubDate>Thu, 26 Dec 2024 23:45:00 +0000</pubDate>
+            <enclosure
+                url="https://github.com/danielraffel/proxymanager-releases/releases/download/v2.0.1/ProxyManager.zip"
+                sparkle:version="20001"
+                sparkle:shortVersionString="2.0.1"
+                length="2680770"
+                type="application/octet-stream"
+                sparkle:edSignature="lpcflohKioKAQd+r7xDvN9dlVNlvnzjfl2Em7J7soiq2iHlV/50XkY+t72ewGFABS2Bwu0jN6i90JFmlnXBRDA=="
+            />
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+        </item>
+
+        <item>
             <title>Version 2.0.0 - Auto-Updates!</title>
             <sparkle:releaseNotesLink>https://github.com/danielraffel/proxymanager-releases/releases/tag/v2.0.0</sparkle:releaseNotesLink>
             <pubDate>Thu, 26 Dec 2024 23:41:00 +0000</pubDate>
