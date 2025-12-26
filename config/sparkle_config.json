@@ -1,0 +1,34 @@
+{
+  "channels": {
+    "debug": {
+      "enabled": true,
+      "feed_url": "https://danielraffel.github.io/proxymanager-releases/appcast/debug.xml",
+      "check_interval": 3600,
+      "auto_download": false,
+      "auto_install": false,
+      "description": "Bleeding edge builds with debug symbols. Updates frequently."
+    },
+    "release": {
+      "enabled": true,
+      "feed_url": "https://danielraffel.github.io/proxymanager-releases/appcast/release.xml",
+      "check_interval": 86400,
+      "auto_download": true,
+      "auto_install": false,
+      "description": "Stable releases. Recommended for most users."
+    },
+    "prod": {
+      "enabled": true,
+      "feed_url": "https://danielraffel.github.io/proxymanager-releases/appcast/prod.xml",
+      "check_interval": 604800,
+      "auto_download": true,
+      "auto_install": false,
+      "description": "Production builds for critical deployments. Updates infrequently."
+    }
+  },
+  "sparkle_settings": {
+    "minimum_system_version": "13.0",
+    "signature_type": "EdDSA",
+    "enable_delta_updates": true,
+    "enable_system_profiling": false
+  }
+}

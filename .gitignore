@@ -1,0 +1,44 @@
+# Release artifacts (too large for git)
+releases/*/*.dmg
+releases/*/*.pkg
+releases/*/*.zip
+
+# Keep structure but ignore binaries
+!releases/.gitkeep
+!releases/*/.gitkeep
+
+# Keep signatures (small files)
+!releases/*/*.sig
+
+# Keep release notes
+!releases/*/CHANGELOG.md
+
+# Sensitive keys
+sparkle_private_key
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+.temp/
