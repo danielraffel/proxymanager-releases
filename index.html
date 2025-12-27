@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- Open Graph (iMessage, Slack, Discord, etc.) -->
+    <meta property="og:title" content="Download AI Gateway Proxy">
+    <meta property="og:description" content="The latest build is available for download.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://danielraffel.github.io/proxymanager-releases/">
+    <meta property="og:image" content="https://raw.githubusercontent.com/danielraffel/proxymanager-releases/refs/heads/main/pt.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Download AI Gateway Proxy">
+    <meta name="twitter:description" content="The latest build is available for download.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/danielraffel/proxymanager-releases/refs/heads/main/pt.png">
+    <title>Download AI Gateway Proxy</title>
+    <style>
+      body {
+        text-align: center;
+        background: #fff;
+        padding: 2em;
+      }
+      a.ascii-link {
+        text-decoration: none;
+        color: transparent;
+        display: inline-block;
+        cursor: pointer;
+      }
+      a.ascii-link pre {
+        font-family: monospace;
+        font-size: 10px;
+        line-height: 1;
+        white-space: pre;
+        background: repeating-linear-gradient(135deg, #000 0 2px, #555 2px 4px);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: left;
+        transition: filter 0.3s ease;
+      }
+      a.ascii-link:hover pre {
+        filter: brightness(1.5);
+      }
+    </style>
+
+    <script>
+      (async () => {
+        try {
+          const res = await fetch("https://api.github.com/repos/danielraffel/proxymanager-releases/releases/latest", {
+            headers: { "Accept": "application/vnd.github+json" }
+          });
+          const json = await res.json();
+          const asset = (json.assets || []).find(a => a.name && a.name.endsWith(".pkg"));
+
+          if (asset && asset.browser_download_url) {
+            // Update the link target dynamically
+            const link = document.getElementById("downloadLink");
+            link.href = asset.browser_download_url;
+            link.target = "_blank"; // open in new tab if clicked
+
+            // Auto-redirect after a short delay (optional)
+            setTimeout(() => {
+              window.location.replace(asset.browser_download_url);
+            }, 2000);
+          } else {
+            document.body.innerHTML = `<p>No .pkg asset found on latest release.</p>`;
+          }
+        } catch (e) {
+          document.body.innerHTML = `<p>Couldn’t resolve latest asset. Try the <a href="https://github.com/danielraffel/proxymanager-releases/releases/latest">releases page</a>.</p>`;
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <a id="downloadLink" class="ascii-link" href="#">
+      <pre>
+ ██████████                                       ████                         █████                                                                            
+░░███░░░░███                                     ░░███                        ░░███                                                                             
+ ░███   ░░███  ██████  █████ ███ █████ ████████   ░███   ██████   ██████    ███████                                                                             
+ ░███    ░███ ███░░███░░███ ░███░░███ ░░███░░███  ░███  ███░░███ ░░░░░███  ███░░███                                                                             
+ ░███    ░███░███ ░███ ░███ ░███ ░███  ░███ ░███  ░███ ░███ ░███  ███████ ░███ ░███                                                                             
+ ░███    ███ ░███ ░███ ░░███████████   ░███ ░███  ░███ ░███ ░███ ███░░███ ░███ ░███                                                                             
+ ██████████  ░░██████   ░░████░████    ████ █████ █████░░██████ ░░████████░░████████                                                                            
+░░░░░░░░░░    ░░░░░░     ░░░░ ░░░░    ░░░░ ░░░░░ ░░░░░  ░░░░░░   ░░░░░░░░  ░░░░░░░░                                                                             
+                                                                                                                                                                
+                                                                                                                                                                
+                                                                                                                                                                
+   █████████   █████      █████████             █████                                                     ███████████                                           
+  ███░░░░░███ ░░███      ███░░░░░███           ░░███                                                     ░░███░░░░░███                                          
+ ░███    ░███  ░███     ███     ░░░   ██████   ███████    ██████  █████ ███ █████  ██████   █████ ████    ░███    ░███ ████████   ██████  █████ █████ █████ ████
+ ░███████████  ░███    ░███          ░░░░░███ ░░░███░    ███░░███░░███ ░███░░███  ░░░░░███ ░░███ ░███     ░██████████ ░░███░░███ ███░░███░░███ ░░███ ░░███ ░███ 
+ ░███░░░░░███  ░███    ░███    █████  ███████   ░███    ░███████  ░███ ░███ ░███   ███████  ░███ ░███     ░███░░░░░░   ░███ ░░░ ░███ ░███ ░░░█████░   ░███ ░███ 
+ ░███    ░███  ░███    ░░███  ░░███  ███░░███   ░███ ███░███░░░   ░░███████████   ███░░███  ░███ ░███     ░███         ░███     ░███ ░███  ███░░░███  ░███ ░███ 
+ █████   █████ █████    ░░█████████ ░░████████  ░░█████ ░░██████   ░░████░████   ░░████████ ░░███████     █████        █████    ░░██████  █████ █████ ░░███████ 
+░░░░░   ░░░░░ ░░░░░      ░░░░░░░░░   ░░░░░░░░    ░░░░░   ░░░░░░     ░░░░ ░░░░     ░░░░░░░░   ░░░░░███    ░░░░░        ░░░░░      ░░░░░░  ░░░░░ ░░░░░   ░░░░░███ 
+                                                                                             ███ ░███                                                  ███ ░███ 
+                                                                                            ░░██████                                                  ░░██████  
+                                                                                             ░░░░░░                                                    ░░░░░░   
+	</pre>
+   </a>
+  </body>
+</html>
