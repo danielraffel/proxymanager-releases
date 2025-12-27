@@ -5,5 +5,20 @@
         <link>https://danielraffel.github.io/proxymanager-releases/appcast/release.xml</link>
         <description>Release updates for ProxyManager</description>
         <language>en</language>
+
+        <item>
+            <title>ProxyManager v1.0 (build 1)</title>
+            <sparkle:releaseNotesLink>https://github.com/danielraffel/proxymanager-releases/releases/tag/v1.0.0</sparkle:releaseNotesLink>
+            <pubDate>Thu, 26 Dec 2024 23:59:00 +0000</pubDate>
+            <enclosure
+                url="https://github.com/danielraffel/proxymanager-releases/releases/download/v1.0.0/ProxyManager.zip"
+                sparkle:version="1"
+                sparkle:shortVersionString="1.0"
+                length="2684410"
+                type="application/octet-stream"
+                sparkle:edSignature="1gY0q3LO8ES3zk6kcvTi9SuZPyukBQM3pYMK+zBUHOO68DNAQRsJJF7YfCi7gJyZUAvOouiTgT2u3Vl9+HFsBQ=="
+            />
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+        </item>
     </channel>
 </rss>
