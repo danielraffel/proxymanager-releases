@@ -7,6 +7,21 @@
         <language>en</language>
 
         <item>
+            <title>ProxyManager v1.0.7 (build 10007)</title>
+            <sparkle:releaseNotesLink>https://github.com/danielraffel/proxymanager-releases/releases/tag/v1.0.7</sparkle:releaseNotesLink>
+            <pubDate>Fri, 27 Dec 2024 02:50:00 +0000</pubDate>
+            <enclosure
+                url="https://github.com/danielraffel/proxymanager-releases/releases/download/v1.0.7/ProxyManager.zip"
+                sparkle:version="10007"
+                sparkle:shortVersionString="1.0.7"
+                length="2681187"
+                type="application/octet-stream"
+                sparkle:edSignature="MY3tqWuzC+1KaGPq/EJuHdKyjw8lXzyFYXYtbu8qnT7q04E65OrZbx7kcBmFVHpWe7HeLEAdWk3nDPCIe4S6Dg=="
+            />
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+        </item>
+
+        <item>
             <title>ProxyManager v1.0.6 (build 10006)</title>
             <sparkle:releaseNotesLink>https://github.com/danielraffel/proxymanager-releases/releases/tag/v1.0.6</sparkle:releaseNotesLink>
             <pubDate>Fri, 27 Dec 2024 02:30:00 +0000</pubDate>
