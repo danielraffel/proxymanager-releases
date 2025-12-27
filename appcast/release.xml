@@ -2,52 +2,8 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>ProxyManager - Release Channel</title>
-        <link>https://daniel raffel.github.io/proxymanager-releases/appcast/release.xml</link>
+        <link>https://danielraffel.github.io/proxymanager-releases/appcast/release.xml</link>
         <description>Release updates for ProxyManager</description>
         <language>en</language>
-
-        <item>
-            <title>Version 2.0.1 - Settings Improvements</title>
-            <sparkle:releaseNotesLink>https://github.com/danielraffel/proxymanager-releases/releases/tag/v2.0.1</sparkle:releaseNotesLink>
-            <pubDate>Thu, 26 Dec 2024 23:45:00 +0000</pubDate>
-            <enclosure
-                url="https://github.com/danielraffel/proxymanager-releases/releases/download/v2.0.1/ProxyManager.zip"
-                sparkle:version="20001"
-                sparkle:shortVersionString="2.0.1"
-                length="2680770"
-                type="application/octet-stream"
-                sparkle:edSignature="lpcflohKioKAQd+r7xDvN9dlVNlvnzjfl2Em7J7soiq2iHlV/50XkY+t72ewGFABS2Bwu0jN6i90JFmlnXBRDA=="
-            />
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-        </item>
-
-        <item>
-            <title>Version 2.0.0 - Auto-Updates!</title>
-            <sparkle:releaseNotesLink>https://github.com/danielraffel/proxymanager-releases/releases/tag/v2.0.0</sparkle:releaseNotesLink>
-            <pubDate>Thu, 26 Dec 2024 23:41:00 +0000</pubDate>
-            <enclosure
-                url="https://github.com/danielraffel/proxymanager-releases/releases/download/v2.0.0/ProxyManager.zip"
-                sparkle:version="20000"
-                sparkle:shortVersionString="2.0.0"
-                length="2679074"
-                type="application/octet-stream"
-                sparkle:edSignature="d/lFB17kSM+H0Kl1pXn3WgTbxvuw7svkmltQd81wzXxhT5Eb0XkDyvZZk6lHIesJRN+OJ5jqoHNENH5q0NBcCg=="
-            />
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-        </item>
-
-        <item>
-            <title>Version 1.0.0 - Initial Release</title>
-            <sparkle:releaseNotesLink>https://github.com/danielraffel/proxymanager-releases/releases/tag/v1.0.0</sparkle:releaseNotesLink>
-            <pubDate>Thu, 26 Dec 2024 23:28:00 +0000</pubDate>
-            <enclosure
-                url="https://github.com/danielraffel/proxymanager-releases/releases/download/v1.0.0/ProxyManager.zip"
-                sparkle:version="10000"
-                sparkle:shortVersionString="1.0.0"
-                length="1739808"
-                type="application/octet-stream"
-            />
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-        </item>
     </channel>
 </rss>
